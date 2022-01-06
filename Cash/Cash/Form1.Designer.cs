@@ -41,7 +41,10 @@ namespace Cash
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.ForeColor = System.Drawing.Color.LightGreen;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.Location = new System.Drawing.Point(409, 263);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -49,8 +52,8 @@ namespace Cash
             this.button1.Size = new System.Drawing.Size(187, 98);
             this.button1.TabIndex = 0;
             this.button1.TabStop = false;
-            this.button1.Text = "????";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "What The FUCK";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
